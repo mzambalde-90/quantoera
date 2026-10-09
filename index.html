@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calculadora de Inflação (IPCA) desde o Plano Real, com salário mínimo e contexto histórico</title>
+<meta name="description" content="Descubra quanto um valor de qualquer época vale hoje. Calculadora de inflação IPCA desde julho de 1994, com salário mínimo de cada período e os fatos que marcaram a economia brasileira. Dados oficiais do Banco Central.">
+<link rel="canonical" href="https://quantoera.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Inflação com Contexto: quanto o seu dinheiro valia?">
+<meta property="og:description" content="Corrija valores pelo IPCA desde o Plano Real e compare com o salário mínimo e os fatos de cada época.">
+<meta property="og:url" content="https://quantoera.com/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📈%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/estilo.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Inflação com Contexto","url":"https://quantoera.com/","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"pt-BR","description":"Calculadora de inflação IPCA desde o Plano Real, com salário mínimo e linha do tempo econômica.","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"De onde vêm os dados da calculadora?","acceptedAnswer":{"@type":"Answer","text":"Do Banco Central do Brasil (SGS): série 433 para o IPCA mensal, calculado pelo IBGE, e série 1619 para o salário mínimo."}},
+{"@type":"Question","name":"Por que o cálculo começa em julho de 1994?","acceptedAnswer":{"@type":"Answer","text":"Porque o real entrou em circulação em 1º de julho de 1994. Antes disso o país tinha outras moedas, e valores em reais não são comparáveis."}},
+{"@type":"Question","name":"O que é o IPCA?","acceptedAnswer":{"@type":"Answer","text":"O Índice Nacional de Preços ao Consumidor Amplo, calculado pelo IBGE, é o índice oficial de inflação do Brasil e a referência da meta de inflação."}}]}]}
+</script>
+</head>
+<body>
+<main>
+<h1>Inflação com Contexto</h1>
+<p class="sub">Quanto vale hoje o dinheiro de antes? E o que estava acontecendo no país?</p>
+
+<section class="card" aria-label="Calculadora de inflação">
+<div class="row">
+<label>Valor (R$)<input id="v" type="number" value="10000" min="0" inputmode="decimal"></label>
+<label>Do início de<div class="pair"><select id="am" aria-label="Mês inicial"></select><select id="ay" aria-label="Ano inicial"></select></div></label>
+<label>Até o fim de<div class="pair"><select id="zm" aria-label="Mês final"></select><select id="zy" aria-label="Ano final"></select></div></label>
+</div>
+<div class="res" id="res" aria-live="polite"></div>
+</section>
+
+<div class="ad" data-slot="meio" hidden></div>
+
+<section class="card"><h2>IPCA acumulado por ano no período (%)</h2><div class="chart" id="ch"></div><div class="lab" id="lb"></div></section>
+
+<section class="card"><h2>O que aconteceu no período</h2><div id="tl"></div></section>
+
+<section class="card cta" id="cta">
+<h2 id="cta-t"></h2><p id="cta-p" hidden></p>
+<a class="btn" id="cta-b" href="#" target="_blank" rel="noopener sponsored">Falar no WhatsApp</a>
+</section>
+
+<section class="card faq">
+<h2>Perguntas frequentes</h2>
+<h3>Como a inflação acumulada é calculada?</h3>
+<p>A calculadora multiplica as variações mensais do IPCA de cada mês do período escolhido. O valor inicial é considerado no começo do mês inicial, e o resultado, no fim do mês final.</p>
+<h3>Por que o cálculo começa em julho de 1994?</h3>
+<p>O real entrou em circulação em 1º de julho de 1994, com o Plano Real. Antes disso o país teve outras moedas e inflação muito alta, então valores em reais não são comparáveis com os de períodos anteriores.</p>
+<h3>O que é o IPCA?</h3>
+<p>É o Índice Nacional de Preços ao Consumidor Amplo, calculado pelo IBGE. É o índice oficial de inflação do Brasil e a referência da meta de inflação perseguida pelo Banco Central.</p>
+<h3>Como o salário mínimo entra na comparação?</h3>
+<p>A ferramenta mostra o valor nacional do salário mínimo vigente no início e no fim do período, quantos salários mínimos o seu valor representava, e se o mínimo subiu acima ou abaixo da inflação.</p>
+<h3>Os eventos da linha do tempo explicam a inflação?</h3>
+<p>Não necessariamente. Eles reúnem fatos relevantes de cada época, com base em fontes confiáveis, para dar contexto. A inflação é resultado de muitos fatores combinados, e a lista não atribui causa a governos.</p>
+</section>
+
+<div class="ad" data-slot="rodape" hidden></div>
+
+<footer>
+<p><b>Fonte dos dados:</b> Banco Central do Brasil, Sistema Gerenciador de Séries Temporais (SGS), série 433 (IPCA, variação mensal, índice calculado pelo IBGE) e série 1619 (salário mínimo). Período: <span id="periodo"></span>. Última atualização do site: <span id="atualizado"></span>.</p>
+<p>Os eventos e a identificação dos presidentes são uma seleção editorial, com base em IBGE, Banco Central e imprensa econômica. Conteúdo de caráter informativo e educacional, sem valor oficial. Não constitui recomendação de investimento nem de qualquer produto financeiro.</p>
+<p><a href="privacidade.html">Política de privacidade</a> · <a href="#" id="ck-gerir" hidden>Gerenciar cookies</a></p>
+</footer>
+</main>
+
+<div id="cookie" hidden>
+<span>Usamos cookies de publicidade (Google) para manter o site gratuito. Você aceita? <a href="privacidade.html">Saiba mais</a></span>
+<button class="btn" id="ck-sim" type="button">Aceitar</button>
+<button class="btn sec" id="ck-nao" type="button">Recusar</button>
+</div>
+
+<script src="config.js"></script>
+<script src="dados.js"></script>
+<script src="eventos.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

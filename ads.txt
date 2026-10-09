@@ -1,0 +1,2 @@
+# Preencha depois da aprovação no AdSense, trocando pelo seu ID de editor (pub-...)
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
